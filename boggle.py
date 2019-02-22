@@ -7,7 +7,7 @@ from random import choice # choice function return item from list at random
 
 def make_grid(height, width):
     """
-    Creat a grid that will hold all the tiles for a boggle game
+    Create a grid that will hold all the tiles for a boggle game
     """
     
     
@@ -99,15 +99,28 @@ def get_dictionary(dictionary_file):
     with open(dictionary_file) as f:
         return [w.strip().upper() for w in f]
         
+
+def main():
+    """
+    This is the function that will run the whole project
+    """
+    grid = make_grid(3, 3)
+    dictionary = get_dictionary('words.txt')
+    words = search(grid, dictionary)
+    for word in words:
+        print(word)
+    print("Found %s words" % len(words))
     
+if __name__ == "__main__":
+    main()
     
 
 
 
-grid = make_grid(2,2)
+# grid = make_grid(2,2)
 
-print(grid)
+# print(grid)
 
-print(path_to_word(grid, [(0, 0), (1, 1)]))
+# print(path_to_word(grid, [(0, 0), (1, 1)]))
 
-print(all_grid_neighbours(make_grid(2, 2)))
+# print(all_grid_neighbours(make_grid(2, 2)))
