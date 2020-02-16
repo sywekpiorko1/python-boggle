@@ -1,6 +1,6 @@
 """
 to test type in cosole:
-python3 -m unitteest
+python3 -m unittest
 to profile type in console:
 python3 -m cProfile boggle.py
 """
